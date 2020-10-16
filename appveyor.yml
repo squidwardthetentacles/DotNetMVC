@@ -5,15 +5,15 @@
       - main
   configuration: Release
   before_build:
-    - ps: nuget restore .\DotNetMVCTest\DotNetMVCTest.sln
+    - ps: nuget restore .\DotNetMVC\DotNetMVCTest.sln
   build:
-    project: .\DotNetMVCTest\DotNetMVCTest.sln# configuration for all other branches except "main"
+    project: .\DotNetMVC\DotNetMVCTest.sln# configuration for all other branches except "main"
 -
   branches:
     except:
       - main
   configuration: Test
   before_build:
-    - ps: nuget restore .\DotNetMVCTest\DotNetMVCTest.sln
+    - ps: nuget restore .\DotNetMVC\DotNetMVCTest.sln
   build:
-    project: .\DotNetMVCTest\DotNetMVCTest.sln
+    project: .\DotNetMVC\DotNetMVCTest.sln
