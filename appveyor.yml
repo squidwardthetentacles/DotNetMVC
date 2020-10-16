@@ -1,0 +1,19 @@
+# configuration for "main" branch
+-
+  branches:
+    only:
+      - main
+  configuration: Release
+  before_build:
+    - ps: nuget restore .\DotNetMVCTest.sln
+  build:
+    project: .\DotNetMVCTest.sln# configuration for all other branches except "main"
+-
+  branches:
+    except:
+      - main
+  configuration: Test
+  before_build:
+    - ps: nuget restore .\DotNetMVCTest.sln
+  build:
+    project: .\DotNetMVCTest.sln
